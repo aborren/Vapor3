@@ -7,6 +7,10 @@ public func routes(_ router: Router) throws {
         return "Hello, world!"
     }
 
+    // Test
+    let testController = TestController()
+    router.get("echo", String.parameter, use: testController.echo)
+    
     // Example of configuring a controller
     let todoController = TodoController()
     router.get("todos", use: todoController.index)
